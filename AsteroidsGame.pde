@@ -4,7 +4,6 @@ boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
 boolean dIsPressed = false;
-boolean hIsPressed = false;
 public void setup() 
 {
   size(500,500);
@@ -14,30 +13,48 @@ public void draw()
 {
   background(255);
   Eric.show();
+  Eric.move();
   if(wIsPressed == true){
-    Eric.accelerate(1);
+    Eric.accelerate((double)0.05);
   }
   if(sIsPressed == true){
-    Eric.accelerate(-1);
+    Eric.accelerate((double)-0.15);
   }
   if(aIsPressed == true){
-   Eric. 
+    Eric.turn(-10);
   }
-  
+  else if(dIsPressed == true){
+    Eric.turn(10);
+  }
   //your code here
 }
-public void keypressed()
+
+public void keyPressed()
 {
-  if(hIsPressed == true)
+  if( key == 'h')
   {
-    Eric.setDirectionX(Math.random()*450);
-    Eric.setDirectionY(Math.random()*450);
+    Eric.setDirectionX(0);
+    Eric.setDirectionY(0);
     Eric.setX((int)Math.random()*450);
     Eric.setY((int)Math.random()*450);
-    Eric.setPointDirection((int)Math.random()*361);
+    Eric.setPointDirection((int)Math.random()*360);
   }
+  if(key == 'w'){
+    wIsPressed = true;
+  }
+  else if(key == 'a'){
+    aIsPressed = true;
+  }
+  else if(key == 's'){
+    sIsPressed = true;
+  }
+  else if(key == 'd'){
+    dIsPressed = true;
+  }
+ 
 }
-  void keyReleased()
+
+public void keyReleased()
   {
     if(key == 'w')
    {
@@ -54,9 +71,7 @@ public void keypressed()
    else if(key == 'd')
    {
      dIsPressed = false;
-   }
-
-   
-  };
+   } 
+  }
 
   
