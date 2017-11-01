@@ -4,9 +4,14 @@ boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
 boolean dIsPressed = false;
+Stars[] aLot;
 public void setup() 
 {
   size(500,500);
+  aLot = new Stars[500];
+  for(int i = 0; i <aLot.length; i++){
+    aLot[i] = new Stars();
+  }
   //your code here
 }
 public void draw() 
@@ -14,6 +19,9 @@ public void draw()
   background(255);
   Eric.show();
   Eric.move();
+  for(int i = 0; i< aLot.length; i++){
+    aLot[i].show();
+  }
   if(wIsPressed == true){
     Eric.accelerate((double)0.05);
   }
@@ -35,9 +43,9 @@ public void keyPressed()
   {
     Eric.setDirectionX(0);
     Eric.setDirectionY(0);
-    Eric.setX((int)Math.random()*450);
-    Eric.setY((int)Math.random()*450);
-    Eric.setPointDirection((int)Math.random()*360);
+    Eric.setX((int)(Math.random()*450));
+    Eric.setY((int)(Math.random()*450));
+    Eric.setPointDirection((int)(Math.random()*360));
   }
   if(key == 'w'){
     wIsPressed = true;
