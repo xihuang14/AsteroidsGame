@@ -4,11 +4,11 @@ boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
 boolean dIsPressed = false;
-Stars[] aLot;
+Stars [] aLot;
 public void setup() 
 {
-  size(500,500);
-  aLot = new Stars[500];
+  size(500,500); 
+  aLot = new Stars[200];
   for(int i = 0; i <aLot.length; i++){
     aLot[i] = new Stars();
   }
@@ -16,7 +16,7 @@ public void setup()
 }
 public void draw() 
 {
-  background(255);
+  background(0);
   Eric.show();
   Eric.move();
   for(int i = 0; i< aLot.length; i++){
