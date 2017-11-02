@@ -25,7 +25,7 @@ public void draw()
   if(wIsPressed == true){
     Eric.accelerate((double)0.075);
   }
-  if(sIsPressed == true){
+  else if(sIsPressed == true){
     Eric.accelerate((double)-0.075);
   }
   if(aIsPressed == true){
