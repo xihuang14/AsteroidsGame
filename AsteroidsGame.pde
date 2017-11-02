@@ -23,10 +23,10 @@ public void draw()
     aLot[i].show();
   }
   if(wIsPressed == true){
-    Eric.accelerate((double)0.05);
+    Eric.accelerate((double)0.075);
   }
   if(sIsPressed == true){
-    Eric.accelerate((double)-0.15);
+    Eric.accelerate((double)-0.075);
   }
   if(aIsPressed == true){
     Eric.turn(-10);
